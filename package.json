@@ -1,0 +1,34 @@
+{
+  "name": "cookie-clicker-electron",
+  "version": "1.0.2",
+  "description": "App estilo Cookie Clicker com autoatualização via GitHub",
+  "author": "Lertiland",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "dotenv -e .env -- electron-builder"
+  },
+  "build": {
+    "appId": "com.lertiland.cookieclicker",
+    "productName": "Cookie Clicker Electron",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "lertiland",
+        "repo": "cookieclicker-clean"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.6.0",
+    "dotenv-cli": "^7.0.0"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.5"
+  }
+}
