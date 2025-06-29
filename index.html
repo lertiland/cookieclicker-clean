@@ -1,10 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head><title>Cookie Clicker v1.0.2</title></head>
+<head>
+  <title>Cookie Clicker v1.0.3</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f8f8f8;
+    }
+    .cookie {
+      font-size: 64px;
+      cursor: pointer;
+    }
+    .upgrade {
+      margin-top: 20px;
+    }
+    .upgrade button:disabled {
+      opacity: 0.4;
+    }
+    .tabs {
+      margin-bottom: 20px;
+    }
+    .tabBtn {
+      margin: 0 5px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+    .tab {
+      display: none;
+    }
+    .tab.active {
+      display: block;
+    }
+  </style>
+</head>
 <body>
-  <h1>Cookie Clicker v1.0.2</h1>
-  <button id="cookie">🍪 Clique!</button>
-  <p id="count">0 cookies</p>
+  <h1>Cookie Clicker</h1>
+
+  <!-- Menu de abas -->
+  <div class="tabs">
+    <button class="tabBtn" data-tab="game">🍪 Jogo</button>
+    <button class="tabBtn" data-tab="stats">📊 Estatísticas</button>
+    <button class="tabBtn" data-tab="achievements">🏆 Conquistas</button>
+    <button class="tabBtn" data-tab="settings">⚙️ Configurações</button>
+    <button class="tabBtn" data-tab="changelog">📃 Changelog</button>
+  </div>
+
+  <!-- Abas -->
+  <div id="game" class="tab active">
+    <div id="cookie" class="cookie">🍪</div>
+    <p id="count">0 cookies</p>
+    <p id="clickValue">Valor por clique: 1</p>
+
+    <div class="upgrade">
+      <h2>Upgrades</h2>
+      <button id="upgradeBtn">Comprar upgrade (10 cookies)</button>
+      <p id="upgradeLevel">Nível do upgrade: 0</p>
+    </div>
+  </div>
+
+  <div id="stats" class="tab">
+    <h2>📊 Estatísticas</h2>
+    <p>Total de cookies: <span id="statTotalCookies">0</span></p>
+    <p>Valor do clique: <span id="statClickValue">1</span></p>
+    <p>Upgrades comprados: <span id="statUpgrades">0</span></p>
+  </div>
+
+  <div id="achievements" class="tab">
+    <h2>🏆 Conquistas</h2>
+    <p>Ainda não há conquistas.</p>
+  </div>
+
+  <div id="settings" class="tab">
+    <h2>⚙️ Configurações</h2>
+    <button id="resetBtn">Resetar progresso</button>
+  </div>
+
+  <div id="changelog" class="tab">
+    <h2>📃 Changelog</h2>
+    <ul>
+      <li><strong>v1.0.3</strong> - Abas e upgrades adicionados</li>
+      <li><strong>v1.0.2</strong> - Salvamento automático</li>
+      <li><strong>v1.0.1</strong> - Versão inicial</li>
+    </ul>
+  </div>
+
   <script src="renderer.js"></script>
 </body>
 </html>
